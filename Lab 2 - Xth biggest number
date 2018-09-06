@@ -1,0 +1,34 @@
+import java.util.*;
+
+public class Lab2 {
+    public static void main(String args[] ) {
+    	System.out.println("Enter size of test case");
+        Scanner scan = new Scanner(System.in);
+        int size = scan.nextInt();
+        int[] arr = new int[size];
+       
+            for(int i = 0; i < arr.length; i++) {
+            	System.out.println("Enter Digit");
+                arr[i] = scan.nextInt();
+            }
+            arr = insertionSort(arr);
+            
+        System.out.println("Enter Xth biggest number");   
+        System.out.println(arr[arr.length-scan.nextInt()]);
+      
+    }
+    
+    public static int[] insertionSort(int[] arr) {
+        for(int i = 0; i < arr.length; i++) {
+            for(int j = i+1; j < arr.length; j++) {
+                if(arr[i] > arr[j]) {
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp; 
+                }
+            }
+        }
+        return arr;
+    }
+    
+}
